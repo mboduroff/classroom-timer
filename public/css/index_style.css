@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates&display=swap');
+
+body {
+    margin: 10% 10%;
+    background-image: url("https://i.imgur.com/jS4mMbM.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*background-position: center center;*/
+
+}
+
+@supports (display: grid) {
+    .outer-div {
+        display: grid;
+        position: center;
+        align-content: space-evenly;
+        align-items: center;
+        vertical-align: middle;
+    }
+
+    .grid-container {
+        display: inline-grid;
+        position: center;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 50% 50%;
+        grid-row-gap: 30%;
+        /*grid-column-gap: 50%;*/
+        justify-items: center;
+        align-items: center;
+        align-content: space-evenly;
+
+    }
+
+    .spacer {
+        display: none;
+    }
+}
+
+@supports not (display: grid) {
+    .outer-div .spacer {
+        font-size: 1rem;
+    }
+
+    .outer-div {
+        column-count: 2;
+        align-items: center;
+        justify-items: center;
+        align-content: center;
+    }
+}
+
+
+.button-3 {
+    appearance: none;
+    background-color: #1e88e5;
+    border: 1px solid rgba(27, 31, 35, .15);
+    border-radius: .5rem;
+    box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 175%;
+    font-weight: 600;
+    line-height: 1.25;
+    padding: 1.5rem 1.2rem;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.button-3:focus:not(:focus-visible):not(.focus-visible) {
+    box-shadow: none;
+    outline: none;
+}
+
+.button-3:hover {
+    background-color: #005cb2;
+}
+
+.button-3:focus {
+    box-shadow: rgba(106, 183, 255, .4) 0 0 0 3px;
+    outline: none;
+}
+
+.button-3:disabled {
+    background-color: #94d3a2;
+    border-color: rgba(27, 31, 35, .1);
+    color: rgba(255, 255, 255, .8);
+    cursor: default;
+}
+
+.button-3:active {
+    background-color: #005cb2;
+    box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
+}
+
+footer {
+    position: absolute;
+    bottom: 2rem;
+    height: 2rem;
+}
+
+#footer {
+    font-family: 'Comfortaa', cursive;
+    display: table;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}

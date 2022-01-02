@@ -1,0 +1,34 @@
+
+.quarter-circle-bottom-left {
+    width: 9.5rem;
+    height: 9.5rem;
+    background: #7b615b;
+    border-radius: 0 9.5rem 0 0;
+    -moz-border-radius: 0 9.5rem 0 0;
+    -webkit-border-radius: 0 9.5rem 0 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+
+.day-counter-bel {
+    text-align: center;
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    color: #f6cd94;
+
+    font-size: 1.6rem;
+    line-height: 1;
+}
+
+.day-counter-bel h2 {
+    font-size: 3.1rem;
+    color: black;
+    letter-spacing: 2px;
+    text-shadow: 0 0 1px #ffe39a, 0 0 1px #ffe39a, 0 0 1px #ffe39a, 0 0 1px #ffe39a;
+}
+
+.day-counter-bel #classes-count {
+    font-style: italic;
+}

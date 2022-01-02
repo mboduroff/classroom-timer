@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>XIIг Таймер</title>
+    <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+
+<h1 id="classNameH1">XIIг</h1>
+<div class="countdown-timer" id="timer"></div>
+<div class="message"></div>
+
+<div id="bel-only"></div>
+
+<script src="js/countdown.js"></script>
+<script src="js/app_hybrid.js"></script>
+<script src="js/bel_class_counter.js"></script>
+
+<script>
+    const classNameH1 = document.getElementById("classNameH1");
+    classNameH1.innerHTML = getClassName();
+
+    const testingUrl = "url(\'https://i.imgur.com/Lv9Mmwa.jpeg\')";
+    const mathsUrl = "url(\'https://i.imgur.com/VCZsC7t.jpeg\')";
+    const englishUrl = "url(\'https://i.imgur.com/X5Dr3Qr.jpeg\')";
+    const breakUrl = "url(\'https://i.imgur.com/YRG4rMB.jpeg\')";
+    const informaticsUrl = "url(\'https://i.imgur.com/aqLpSgm.jpeg\')"
+    const belUrl = "url(\'https://i.imgur.com/BRpPRJn.jpeg\')";
+    const homeroomUrl = "url(\'https://i.imgur.com/hDYySSz.jpeg\')";
+    const deutschUrl = "url(\'https://i.imgur.com/nv7p6Ql.jpeg\')";
+    const sportsUrl = "url(\'https://i.imgur.com/Juyl0a8.jpeg\')";
+    const grazhdanskoUrl = "url(\'https://i.imgur.com/HsN5Hl1.jpeg\')";
+
+    if (className.includes("еждучасие") || className.includes("ден")) {
+        document.body.style.backgroundImage = breakUrl;
+    } else if (className.includes("атем")) {
+        document.body.style.backgroundImage = mathsUrl;
+    } else if (className.includes("nglish")) {
+        document.body.style.backgroundImage = englishUrl;
+    } else if (className.includes("език") || className.includes("тература")
+        || className.includes("БЕЛ")) {
+        const belOnly = document.getElementById("bel-only");
+        belOnly.innerHTML = `<link href="css/bel_counter_stylesheet.css" rel="stylesheet">
+<div class="quarter-circle-bottom-left">
+    <div class="day-counter-bel"><h3>остават</h3>
+<h2 id="day-counter">${getDaysOfBelLeft()}</h2>
+        <h3 id="classes-count">уч. ч.</h3></div>
+</div>`;
+        document.body.style.backgroundImage = belUrl;
+        document.getElementById("classNameH1").style.textShadow = '1px 1px 1px rgba(255, 227, 154, .8)';
+        document.getElementById("timer").style.textShadow = '2.5px 2.5px 2.5px rgba(255, 227, 154, .8)';
+    } else if (className.includes("нформатика")) {
+        document.body.style.backgroundImage = informaticsUrl;
+    } else if (className.includes("Deutsch")) {
+        document.body.style.backgroundImage = deutschUrl;
+    } else if (className.includes("ФВС")) {
+        document.body.style.backgroundImage = sportsUrl;
+    } else if (className.includes("клас")) {
+        document.body.style.backgroundImage = homeroomUrl;
+    } else if (className.includes("образование")) {
+        document.body.style.backgroundImage = grazhdanskoUrl;
+        classNameH1.style.fontSize = "70px";
+    } else if (className.includes("естване")) {
+        document.body.style.backgroundImage = testingUrl;
+    } else { // white folds
+        document.body.style.backgroundImage = "url(\'https://i.imgur.com/CaRQ125.jpeg\')";
+    }
+
+
+    function getClassName() {
+        return "<a href=\"timer_hybrid_separate.html\">" + className + "</a>";
+    }
+
+</script>
+</body>
+</html>
