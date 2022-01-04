@@ -13,10 +13,10 @@ function checkClass() {
     const dayOfWeek = date.getDay();
 
     switch (dayOfWeek) {
-        case 2:
+        case 1:
             [hh, mm, clN] = runMondayChecks();
             break;
-        case 1:
+        case 2:
             [hh, mm, clN] = runTuesdayChecks();
             break;
         case 3:
