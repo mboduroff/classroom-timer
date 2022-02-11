@@ -6,6 +6,7 @@ body {
     background-image: url("https://i.imgur.com/jS4mMbM.jpeg");
     background-repeat: no-repeat;
     background-size: cover;
+    text-align: center;
     /*background-position: center center;*/
 
 }
@@ -35,6 +36,25 @@ body {
     .spacer {
         display: none;
     }
+
+    .outer-div-blocks .form {
+        display: inline-block;
+        text-align: center;
+    }
+
+    .outer-div-blocks {
+        display: inline-block;
+        text-align: center;
+        margin: auto;
+        /*width: 100%;*/
+        padding: 10px;
+    }
+
+    .float-left-class {
+        text-align: center;
+        float: left;
+        margin-right: 1rem;
+    }
 }
 
 @supports not (display: grid) {
@@ -50,57 +70,6 @@ body {
     }
 }
 
-
-.button-3 {
-    appearance: none;
-    background-color: #1e88e5;
-    border: 1px solid rgba(27, 31, 35, .15);
-    border-radius: .5rem;
-    box-shadow: rgba(27, 31, 35, .1) 0 1px 0;
-    box-sizing: border-box;
-    color: #fff;
-    cursor: pointer;
-    display: inline-block;
-    font-family: 'Montserrat Alternates', sans-serif;
-    font-size: 175%;
-    font-weight: 600;
-    line-height: 1.25;
-    padding: 1.5rem 1.2rem;
-    position: relative;
-    text-align: center;
-    text-decoration: none;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    vertical-align: middle;
-    white-space: nowrap;
-}
-
-.button-3:focus:not(:focus-visible):not(.focus-visible) {
-    box-shadow: none;
-    outline: none;
-}
-
-.button-3:hover {
-    background-color: #005cb2;
-}
-
-.button-3:focus {
-    box-shadow: rgba(106, 183, 255, .4) 0 0 0 3px;
-    outline: none;
-}
-
-.button-3:disabled {
-    background-color: #94d3a2;
-    border-color: rgba(27, 31, 35, .1);
-    color: rgba(255, 255, 255, .8);
-    cursor: default;
-}
-
-.button-3:active {
-    background-color: #005cb2;
-    box-shadow: rgba(20, 70, 32, .2) 0 1px 0 inset;
-}
 
 footer {
     position: absolute;
