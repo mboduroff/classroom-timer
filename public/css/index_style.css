@@ -37,9 +37,19 @@ body {
         display: none;
     }
 
-    .outer-div-blocks .form {
+    .outer-div-blocks .button-3 {
         display: inline-block;
         text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .home-button {
+        display: inline-block;
+        text-align: center;
+    }
+
+    .home-button .button-3 {
+        line-height: .25;
     }
 
     .outer-div-blocks {
@@ -69,7 +79,6 @@ body {
         align-content: center;
     }
 }
-
 
 footer {
     position: absolute;
