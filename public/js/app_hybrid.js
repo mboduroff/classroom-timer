@@ -51,105 +51,9 @@ const className = checkClass()[1];
 
 console.log("> end: " + endDate.toLocaleString('en-uk'));
 
+const audio = new Audio('../audio/bell.wav');
 
 function runMondayChecks() {
-    switch (hours) {
-        case 7:
-            hh = '09';
-            mm = '30';
-            clN = 'Математика';
-            break;
-        case 8:
-            hh = '09';
-            mm = '30';
-            clN = 'Математика';
-            break;
-        case 9:
-            if (minutes < 30) {
-                hh = '09';
-                mm = '30';
-                clN = 'Математика';
-            } else if (minutes < 50) {
-                hh = '09';
-                mm = '50';
-                clN = 'Междучасие';
-            } else {
-                hh = '11';
-                mm = '20';
-                clN = 'Информатика';
-            }
-            break;
-        case 10:
-            hh = '11';
-            mm = '20';
-            clN = 'Информатика';
-            break;
-        case 11:
-            if (minutes < 20) {
-                hh = '11';
-                mm = '20';
-                clN = 'Информатика';
-            } else if (minutes < 50) {
-                hh = '11';
-                mm = '50';
-                clN = 'Голямо междучасие';
-            } else {
-                hh = '12';
-                mm = '35';
-                clN = 'English';
-            }
-            break;
-        case 12:
-            if (minutes < 35) {
-                hh = '12';
-                mm = '35';
-                clN = 'English';
-            } else if (minutes < 45) {
-                hh = '12';
-                mm = '45';
-                clN = 'Междучасие';
-            } else {
-                hh = '13';
-                mm = '30';
-                clN = 'Deutsch';
-            }
-            break;
-        case 13:
-            if (minutes < 30) {
-                hh = '13';
-                mm = '30';
-                clN = 'Deutsch';
-            } else if (minutes < 35) {
-                hh = '13';
-                mm = '35';
-                clN = 'Междучасие';
-            } else {
-                hh = '14';
-                mm = '20';
-                clN = 'Литература';
-            }
-            break;
-        case 14:
-            if (minutes < 20) {
-                hh = '14';
-                mm = '20';
-                clN = 'Литература';
-            } else {
-                hh = '14';
-                mm = '20';
-                clN = 'учебния ден';
-            }
-            break;
-        default:
-            hh = hours + 1;
-            mm = minutes;
-            clN = 'Почивка';
-            break;
-    }
-    return [hh, mm, clN];
-}
-
-function runTuesdayChecks() {
     switch (hours) {
         case 7:
             hh = '08';
@@ -210,7 +114,7 @@ function runTuesdayChecks() {
             } else if (minutes < 50) {
                 hh = '12';
                 mm = '50';
-                clN = 'Междучасие';
+                clN = 'Голямо междучасие';
             } else {
                 hh = '13';
                 mm = '30';
@@ -233,13 +137,11 @@ function runTuesdayChecks() {
             }
             break;
         case 14:
+            hh = '14';
+            mm = '15';
             if (minutes < 15) {
-                hh = '14';
-                mm = '15';
                 clN = 'Литература';
             } else {
-                hh = '14';
-                mm = '15';
                 clN = 'учебния ден';
             }
             break;
@@ -250,70 +152,213 @@ function runTuesdayChecks() {
             break;
     }
 
+    return [hh, mm, clN];
+}
+
+function runTuesdayChecks() {
+    switch (hours) {
+        case 7:
+            hh = '08';
+            mm = '45';
+            clN = 'Литература';
+            break;
+        case 8:
+            if (minutes < 45) {
+                hh = '08';
+                mm = '45';
+                clN = 'Литература';
+            } else if (minutes < 55) {
+                hh = '08';
+                mm = '55';
+                clN = 'Междучасие';
+            } else {
+                hh = '09';
+                mm = '40';
+                clN = 'Deutsch';
+            }
+            break;
+        case 9:
+            if (minutes < 40) {
+                hh = '09';
+                mm = '40';
+                clN = 'Deutsch';
+            } else if (minutes < 50) {
+                hh = '09';
+                mm = '50';
+                clN = 'Междучасие';
+            } else {
+                hh = '10';
+                mm = '35';
+                clN = 'Информатика';
+            }
+            break;
+        case 10:
+            if (minutes < 35) {
+                hh = '10';
+                mm = '35';
+                clN = 'Информатика'
+            } else if (minutes < 45) {
+                hh = '10';
+                mm = '45';
+                clN = 'Междучасие'
+            } else {
+                hh = '11';
+                mm = '30';
+                clN = 'Информатика';
+            }
+            break;
+        case 11:
+            if (minutes < 30) {
+                hh = '11';
+                mm = '30';
+                clN = 'Информатика';
+            } else if (minutes < 50) {
+                hh = '11';
+                mm = '50';
+                clN = 'Голямо междучасие';
+            } else {
+                hh = '12';
+                mm = '35';
+                clN = 'English';
+            }
+            break;
+        case 12:
+            if (minutes < 35) {
+                hh = '12';
+                mm = '35';
+                clN = 'English';
+            } else if (minutes < 45) {
+                hh = '12';
+                mm = '45';
+                clN = 'Междучасие';
+            } else {
+                hh = '13';
+                mm = '30';
+                clN = 'Математика';
+            }
+            break;
+        case 13:
+            hh = '13';
+            mm = '30';
+            if (minutes < 30) {
+                clN = 'Математика';
+            } else {
+                clN = 'учебния ден'
+            }
+            break;
+        default:
+            hh = hours + 1;
+            mm = minutes;
+            clN = 'Почивка';
+            break;
+    }
     return [hh, mm, clN];
 }
 
 function runWednesdayChecks() {
     switch (hours) {
         case 7:
-            hh = '09';
-            mm = '30';
-            clN = 'Математика';
+            hh = '08';
+            mm = '45';
+            clN = 'Maтематиka';
             break;
         case 8:
-            hh = '09';
-            mm = '30';
-            clN = 'Математика';
+            if (minutes < 45) {
+                hh = '08';
+                mm = '45';
+                clN = 'Maтематиka';
+            } else if (minutes < 45) {
+                hh = '08';
+                mm = '55';
+                clN = 'Междучасие';
+            } else {
+                hh = '09';
+                mm = '40';
+                clN = 'Maтематиka';
+            }
             break;
         case 9:
-            if (minutes < 30) {
+            if (minutes < 40) {
                 hh = '09';
-                mm = '30';
-                clN = 'Математика';
+                mm = '40';
+                clN = 'Maтематиka';
             } else if (minutes < 50) {
                 hh = '09';
                 mm = '50';
                 clN = 'Междучасие';
             } else {
-                hh = '11';
-                mm = '20';
-                clN = 'English';
+                hh = '10';
+                mm = '35';
+                clN = 'Maтематиka';
             }
             break;
         case 10:
-            hh = '11';
-            mm = '20';
-            clN = 'English';
+            if (minutes < 35) {
+                hh = '10';
+                mm = '35';
+                clN = 'Maтематиka';
+            } else if (minutes < 45) {
+                hh = '10';
+                mm = '45';
+                clN = 'Междучасие';
+            } else {
+                hh = '11';
+                mm = '30';
+                clN = 'English';
+            }
             break;
         case 11:
-            if (minutes < 20) {
+            if (minutes < 30) {
                 hh = '11';
-                mm = '20';
+                mm = '30';
                 clN = 'English';
             } else if (minutes < 50) {
                 hh = '11';
                 mm = '50';
                 clN = 'Голямо междучасие';
             } else {
+                hh = '12';
+                mm = '35';
+                clN = 'English';
+            }
+            break;
+        case 12:
+            if (minutes < 35) {
+                hh = '12';
+                mm = '35';
+                clN = 'English';
+            } else if (minutes < 45) {
+                hh = '12';
+                mm = '45';
+                clN = 'Междучасие'
+            } else {
                 hh = '13';
+                mm = '30';
+                clN = 'Информатика';
+            }
+            break;
+        case 13:
+            if (minutes < 30) {
+                hh = '13';
+                mm = '30';
+                clN = 'Информатика';
+            } else if (minutes < 35) {
+                hh = '13';
+                mm = '35';
+                clN = 'Междучасие'
+            } else {
+                hh = '14';
                 mm = '20';
                 clN = 'Информатика';
             }
             break;
-        case 12:
-            hh = '13';
+        case 14:
+            hh = '14';
             mm = '20';
-            clN = 'Информатика';
-            break;
-        case 13:
             if (minutes < 20) {
-                hh = '13';
-                mm = '20';
                 clN = 'Информатика';
             } else {
-                hh = '13';
-                mm = '20';
-                clN = 'учебния ден';
+                clN = 'учебния ден'
             }
             break;
         default:
@@ -322,26 +367,20 @@ function runWednesdayChecks() {
             clN = 'Почивка';
             break;
     }
-
     return [hh, mm, clN];
 }
 
 function runThursdayChecks() {
     switch (hours) {
-        case 7:
-            hh = '09';
-            mm = '30';
-            clN = 'English';
-            break;
         case 8:
             hh = '09';
-            mm = '30';
+            mm = '40';
             clN = 'English';
             break;
         case 9:
-            if (minutes < 30) {
+            if (minutes < 40) {
                 hh = '09';
-                mm = '30';
+                mm = '40';
                 clN = 'English';
             } else if (minutes < 50) {
                 hh = '09';
@@ -350,14 +389,14 @@ function runThursdayChecks() {
             } else {
                 hh = '10';
                 mm = '35';
-                clN = 'Deutsch';
+                clN = 'English';
             }
             break;
         case 10:
             if (minutes < 35) {
                 hh = '10';
                 mm = '35';
-                clN = 'Deutsch';
+                clN = 'English';
             } else if (minutes < 45) {
                 hh = '10';
                 mm = '45';
@@ -380,14 +419,14 @@ function runThursdayChecks() {
             } else {
                 hh = '12';
                 mm = '35';
-                clN = 'Математика';
+                clN = 'ФВС';
             }
             break;
         case 12:
             if (minutes < 35) {
                 hh = '12';
                 mm = '35';
-                clN = 'Математика';
+                clN = 'ФВС';
             } else if (minutes < 45) {
                 hh = '12';
                 mm = '45';
@@ -395,17 +434,30 @@ function runThursdayChecks() {
             } else {
                 hh = '13';
                 mm = '30';
-                clN = 'ФВС';
+                clN = 'Математика';
             }
             break;
         case 13:
             if (minutes < 30) {
                 hh = '13';
                 mm = '30';
-                clN = 'ФВС';
-            } else {
+                clN = 'Математика';
+            } else if (minutes < 35) {
                 hh = '13';
-                mm = '30';
+                mm = '35';
+                clN = 'Междучасие';
+            } else {
+                hh = '14';
+                mm = '20';
+                clN = 'Математика';
+            }
+            break;
+        case 14:
+            hh = '14';
+            mm = '20';
+            if (minutes < 20) {
+                clN = 'Математика';
+            } else {
                 clN = 'учебния ден';
             }
             break;
@@ -422,60 +474,86 @@ function runThursdayChecks() {
 function runFridayChecks() {
     switch (hours) {
         case 7:
-            hh = '09';
-            mm = '30';
-            clN = 'Математика';
+            hh = '08';
+            mm = '45';
+            clN = 'English';
             break;
         case 8:
-            hh = '09';
-            mm = '30';
-            clN = 'Математика';
+            if (minutes < 45) {
+                hh = '08';
+                mm = '45';
+                clN = 'English';
+            } else if (minutes < 55) {
+                hh = '08';
+                mm = '55';
+                clN = 'Междучасие';
+            } else {
+                hh = '09';
+                mm = '40';
+                clN = 'English';
+            }
             break;
         case 9:
-            if (minutes < 30) {
+            if (minutes < 40) {
                 hh = '09';
-                mm = '30';
-                clN = 'Математика';
+                mm = '40';
+                clN = 'English';
             } else if (minutes < 50) {
                 hh = '09';
                 mm = '50';
                 clN = 'Междучасие';
             } else {
-                hh = '11';
-                mm = '20';
+                hh = '10';
+                mm = '35';
                 clN = 'Информатика';
             }
             break;
         case 10:
-            hh = '11';
-            mm = '20';
-            clN = 'Информатика';
+            if (minutes < 35) {
+                hh = '10';
+                mm = '35';
+                clN = 'Информатика';
+            } else if (minutes < 45) {
+                hh = '10';
+                mm = '45';
+                clN = 'Междучасие';
+            } else {
+                hh = '11';
+                mm = '30';
+                clN = 'Информатика';
+            }
             break;
         case 11:
-            if (minutes < 20) {
+            if (minutes < 30) {
                 hh = '11';
-                mm = '20';
+                mm = '30';
                 clN = 'Информатика';
             } else if (minutes < 50) {
                 hh = '11';
                 mm = '50';
                 clN = 'Голямо междучасие';
             } else {
-                hh = '13';
-                mm = '20';
-                clN = 'English';
+                hh = '12';
+                mm = '35';
+                clN = 'Maтематиka';
             }
             break;
         case 12:
-            hh = '13';
-            mm = '20';
-            clN = 'English';
+            if (minutes < 35) {
+                hh = '12';
+                mm = '35';
+                clN = 'Maтематиka';
+            } else if (minutes < 45) {
+                hh = '13';
+                mm = '30';
+                clN = 'БЕЛ-РП';
+            }
             break;
         case 13:
-            if (minutes < 20) {
+            if (minutes < 30) {
                 hh = '13';
-                mm = '20';
-                clN = 'English';
+                mm = '30';
+                clN = 'БЕЛ-РП';
             } else if (minutes < 35) {
                 hh = '13';
                 mm = '35';
@@ -483,17 +561,15 @@ function runFridayChecks() {
             } else {
                 hh = '14';
                 mm = '20';
-                clN = 'БЕЛ-РП';
+                clN = 'Deutsch';
             }
             break;
         case 14:
+            hh = '14';
+            mm = '20';
             if (minutes < 20) {
-                hh = '14';
-                mm = '20';
-                clN = 'БЕЛ-РП';
+                clN = 'Deutsch';
             } else {
-                hh = '14';
-                mm = '20';
                 clN = 'учебния ден';
             }
             break;
@@ -614,7 +690,6 @@ function complete() {
 }
 
 function playAudio() {
-    const audio = new Audio('../audio/bell.wav');
     audio.play().then(() => {
         console.log("bell rung; reloading page");
     });
