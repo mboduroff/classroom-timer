@@ -488,8 +488,8 @@ function runFridayChecks() {
             }
             break;
         default:
-            hh = hours + 1;
-            mm = minutes;
+            hh = hours;
+            mm = minutes + 15;
             clN = 'Maтематиka';
             break;
     }
