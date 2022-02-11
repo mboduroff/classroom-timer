@@ -31,6 +31,7 @@
     const deutschUrl = "url(\'https://i.imgur.com/nv7p6Ql.jpeg\')";
     const sportsUrl = "url(\'https://i.imgur.com/Juyl0a8.jpeg\')";
     const grazhdanskoUrl = "url(\'https://i.imgur.com/HsN5Hl1.jpeg\')";
+    const statisticsUrl = "url(\'https://i.imgur.com/8nYQflY.png\')"
 
     if (className.includes("еждучасие") || className.includes("ден")) {
         document.body.style.backgroundImage = breakUrl;
@@ -56,6 +57,9 @@
         document.body.style.backgroundImage = deutschUrl;
     } else if (className.includes("ФВС")) {
         document.body.style.backgroundImage = sportsUrl;
+    } else if (className === "Maтематиka") {
+        document.body.style.backgroundImage = statisticsUrl;
+        classNameH1.innerHTML = "<a href=\"block_picker.html\">Математика</a>";
     } else if (className.includes("клас")) {
         document.body.style.backgroundImage = homeroomUrl;
     } else if (className.includes("образование")) {
@@ -65,11 +69,9 @@
         document.body.style.backgroundImage = "url(\'https://i.imgur.com/CaRQ125.jpeg\')";
     }
 
-
     function getClassName() {
         return "<a href=\"timer_separate.html\">" + className + "</a>";
     }
-
 
 </script>
 </body>
