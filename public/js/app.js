@@ -287,9 +287,9 @@ function runWednesdayChecks() {
             clN = 'English';
             break;
         case 12:
-            if (minutes < 25) {
+            if (minutes < 15) {
                 hh = '12';
-                mm = '25';
+                mm = '15';
                 clN = 'English';
             } else if (minutes < 45) {
                 hh = '12';
