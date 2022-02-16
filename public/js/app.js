@@ -283,7 +283,7 @@ function runWednesdayChecks() {
             break;
         case 11:
             hh = '12';
-            mm = '25';
+            mm = '15';
             clN = 'English';
             break;
         case 12:
