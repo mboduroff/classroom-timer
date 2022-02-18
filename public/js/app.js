@@ -458,10 +458,14 @@ function runFridayChecks() {
                 mm = '35';
                 clN = 'Maтематиka';
             } else if (minutes < 45) {
+                hh = '12';
+                mm = '45';
+                clN = 'Междучасие';
+            } else {
                 hh = '13';
                 mm = '30';
                 clN = 'БЕЛ-РП';
-            }
+            } 
             break;
         case 13:
             if (minutes < 30) {
