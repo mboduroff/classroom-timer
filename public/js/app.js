@@ -328,18 +328,18 @@ function runThursdayChecks() {
     switch (hours) {
         case 8:
             hh = '10';
-            mm = '25';
+            mm = '15';
             clN = 'English';
             break;
         case 9:
             hh = '10';
-            mm = '25';
+            mm = '15';
             clN = 'English';
             break;
         case 10:
-            if (minutes < 25) {
+            if (minutes < 15) {
                 hh = '10';
-                mm = '25';
+                mm = '15';
                 clN = 'English';
             } else if (minutes < 45) {
                 hh = '10';
