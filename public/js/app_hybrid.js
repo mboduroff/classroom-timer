@@ -373,88 +373,69 @@ function runWednesdayChecks() {
 function runThursdayChecks() {
     switch (hours) {
         case 8:
-            hh = '09';
-            mm = '40';
+            hh = '10';
+            mm = '10';
             clN = 'English';
             break;
         case 9:
-            if (minutes < 40) {
-                hh = '09';
-                mm = '40';
-                clN = 'English';
-            } else if (minutes < 50) {
-                hh = '09';
-                mm = '50';
-                clN = 'Междучасие';
-            } else {
                 hh = '10';
-                mm = '35';
+                mm = '10';
                 clN = 'English';
-            }
             break;
         case 10:
-            if (minutes < 35) {
+            if (minutes < 10) {
                 hh = '10';
-                mm = '35';
+                mm = '10';
                 clN = 'English';
-            } else if (minutes < 45) {
+            } else if (minutes < 30) {
                 hh = '10';
-                mm = '45';
+                mm = '30';
                 clN = 'Междучасие';
             } else {
                 hh = '11';
-                mm = '30';
+                mm = '10';
                 clN = 'Български език';
             }
             break;
         case 11:
-            if (minutes < 30) {
+            if (minutes < 10) {
+                hh = '11';
+                mm = '10';
+                clN = 'Български език';
+            } else if (minutes < 30) {
                 hh = '11';
                 mm = '30';
-                clN = 'Български език';
-            } else if (minutes < 50) {
-                hh = '11';
-                mm = '50';
                 clN = 'Голямо междучасие';
             } else {
                 hh = '12';
-                mm = '35';
+                mm = '10';
                 clN = 'ФВС';
             }
             break;
         case 12:
-            if (minutes < 35) {
+            if (minutes < 10) {
                 hh = '12';
-                mm = '35';
+                mm = '10';
                 clN = 'ФВС';
-            } else if (minutes < 45) {
+            } else if (minutes < 20) {
                 hh = '12';
-                mm = '45';
+                mm = '20';
                 clN = 'Междучасие';
             } else {
                 hh = '13';
-                mm = '30';
+                mm = '40';
                 clN = 'Математика';
             }
             break;
         case 13:
-            if (minutes < 30) {
                 hh = '13';
-                mm = '30';
+                mm = '40';
                 clN = 'Математика';
-            } else if (minutes < 35) {
-                hh = '13';
-                mm = '35';
-                clN = 'Междучасие';
-            } else {
-                hh = '14';
-                mm = '20';
-                clN = 'Математика';
-            }
+     
             break;
         case 14:
-            hh = '14';
-            mm = '20';
+            hh = '13';
+            mm = '40';
             if (minutes < 20) {
                 clN = 'Математика';
             } else {
