@@ -328,12 +328,12 @@ function runThursdayChecks() {
     switch (hours) {
         case 8:
             hh = '10';
-            mm = '15';
+            mm = '25';
             clN = 'English';
             break;
         case 9:
             hh = '10';
-            mm = '15';
+            mm = '25';
             clN = 'English';
             break;
         case 10:
