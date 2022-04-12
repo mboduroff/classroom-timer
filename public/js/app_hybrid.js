@@ -163,24 +163,15 @@ function runTuesdayChecks() {
             clN = 'Литература';
             break;
         case 8:
-            if (minutes < 45) {
-                hh = '08';
-                mm = '45';
-                clN = 'Литература';
-            } else if (minutes < 55) {
-                hh = '08';
-                mm = '55';
-                clN = 'Междучасие';
-            } else {
                 hh = '09';
-                mm = '40';
+                mm = '30';
                 clN = 'Deutsch';
-            }
+            
             break;
         case 9:
-            if (minutes < 40) {
+            if (minutes < 30) {
                 hh = '09';
-                mm = '40';
+                mm = '30';
                 clN = 'Deutsch';
             } else if (minutes < 50) {
                 hh = '09';
